@@ -1,0 +1,144 @@
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope/Manrope-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+
+@import "tailwindcss";
+
+@theme {
+  --color-green: #44ffa1;
+  --color-purple-900: #24053e;
+  --color-purple-500: #584d62;
+  --font-Manrope: "Manrope", sans-serif;
+  --font-Fraunces: "Fraunces", serif;
+  /* --purple-100: #fcf8ff; */
+}
+
+@layer base {
+  body {
+    @apply overflow-x-hidden;
+  }
+
+  header {
+    @apply relative z-10 bg-purple-900 text-white flex items-center justify-between px-5 pt-8 md:px-11 lg:px-20;
+  }
+
+  header a {
+    @apply font-Manrope text-[1.125rem] font-bold leading-[180%] border-b-[3px] border-green pb-[3px] transition hover:text-green;
+  }
+}
+
+@layer components {
+  .hero {
+    @apply relative bg-purple-900 text-white text-center pt-[56px] pb-[178px];
+  }
+
+  .hero-title {
+    @apply font-Fraunces text-[3rem] md:text-[3.75rem] leading-[110%] font-semibold pb-10;
+  }
+
+  .hero-button {
+    @apply bg-green text-purple-900 px-8 py-3 font-Manrope text-[1rem] md:text-[1.125rem] leading-[180%] font-bold transition hover:bg-transparent hover:text-green hover:border-[2px] hover:border-green;
+  }
+
+  .hero-image {
+    @apply w-[calc(90%)] max-w-[514px] mx-auto absolute z-[2] bottom-0 left-1/2 -translate-x-1/2 translate-y-[calc(50%+20px)];
+  }
+
+  .hero-ornamental {
+    @apply absolute bottom-0;
+  }
+
+  .hero-ornamental img {
+    @apply w-screen;
+  }
+
+  .hero-bg-pattern1 {
+    @apply absolute top-0 left-[-230px] hidden md:block;
+  }
+
+  .hero-bg-pattern2 {
+    @apply absolute bottom-[80px] right-[-100px] hidden md:block;
+  }
+
+  /* featues section*/
+
+  .features {
+    @apply mt-[190px] py-[64px] md:py-[56px] lg:py-22 px-5 md:px-11 lg:px-20 flex flex-col lg:flex-row gap-y-8 lg:gap-x-8;
+  }
+
+  .feature {
+    @apply flex flex-col md:flex-row lg:flex-col items-center text-center  md:items-center md:gap-x-[56px];
+  }
+
+  .feature h3 {
+    @apply font-Fraunces text-[1.25rem] text-purple-900 font-semibold leading-[40px]  border border-purple-500 size-[48px] md:min-w-[48px] flex items-center justify-center rounded-full mb-6 md:mb-0 lg:mb-[56px];
+  }
+
+  .feature-content {
+    @apply flex flex-col gap-y-4 md:gap-y-7 md:text-left lg:text-center;
+  }
+
+  .feature h4 {
+    @apply font-Fraunces text-[1.5rem] text-purple-900 font-semibold leading-[120%];
+  }
+
+  .feature p {
+    @apply font-Manrope text-[1rem] text-purple-900 font-normal leading-[180%] max-w-[514px] md:max-w-fit;
+  }
+
+  /* founder section */
+  .founder {
+    @apply relative px-5 md:px-[44px] lg:px-20 pt-[185px] mt-[112px] lg:max-w-[calc(1120px+160px)] lg:mx-auto;
+  }
+
+  .founder-image {
+    @apply absolute -z-[1] top-0 left-1/2 md:left-[44px] lg:left-[80px] -translate-x-1/2 md:translate-x-0 px-[27.5px] md:px-0 w-[calc(100%-55px)] max-w-[280px] md:w-[40%] md:max-w-[477px] lg:min-w-[477px];
+  }
+
+  .founder-text {
+    @apply relative bg-purple-900 text-white text-center md:text-left p-8 md:p-[48px] flex flex-col items-center md:items-start gap-y-8 md:w-[71%] lg:w-[65%] md:ml-auto;
+  }
+
+  .founder-text h2 {
+    @apply font-Fraunces text-[2rem] leading-[120%] font-semibold;
+  }
+
+  .founder-text p {
+    @apply font-Manrope text-[1rem] font-normal leading-[180%] max-w-[514px] md:max-w-[408px] lg:max-w-[602px]  mx-auto md:mx-0;
+  }
+
+  .founder-button {
+    @apply bg-green text-purple-900 px-8 py-3 font-Manrope text-[1rem] leading-[180%] font-bold border-[2px] border-green transition hover:bg-transparent hover:text-green hover:border-[2px] hover:border-green;
+  }
+
+  .hero-bg-pattern3 {
+    @apply absolute bottom-[-110px] lg:bottom-[-60px] right-[100px] hidden md:block;
+  }
+
+  /* footer */
+  footer {
+    @apply flex flex-col items-center gap-y-[56px] p-20 md:py-[112px];
+  }
+
+  .footer-nav {
+    @apply flex items-center gap-x-[28px];
+  }
+
+  .footer-link {
+    @apply transition hover:filter-[brightness(0)_saturate(100%)_invert(12%)_sepia(26%)_saturate(2796%)_hue-rotate(245deg)_brightness(93%)_contrast(116%)];
+  }
+}
